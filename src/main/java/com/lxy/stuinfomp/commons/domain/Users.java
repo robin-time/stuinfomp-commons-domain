@@ -1,16 +1,20 @@
 package com.lxy.stuinfomp.commons.domain;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.lxy.stuinfomp.commons.dto.AbstractBaseDomain;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Table(name = "users")
-public class Users {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class Users extends AbstractBaseDomain {
     /**
      * 主键ID
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "user_name")
     private String userName;
@@ -36,7 +40,7 @@ public class Users {
      *
      * @return id - 主键ID
      */
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
@@ -45,7 +49,7 @@ public class Users {
      *
      * @param id 主键ID
      */
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
