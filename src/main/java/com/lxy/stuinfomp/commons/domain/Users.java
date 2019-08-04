@@ -17,7 +17,7 @@ public class Users extends AbstractBaseDomain {
 
     @Column(name = "user_name")
     @NotNull(message = "用户名不能为空")
-    @Length(min = 5, max = 20, message = "用户名长度必须介于 6 和 20 之间")
+    @Length(min = 5, max = 20, message = "用户名长度必须介于 5 和 20 之间")
     private String userName;
 
     @NotNull(message = "密码不能为空")
