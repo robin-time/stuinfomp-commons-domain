@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 public class Students extends AbstractBaseDomain {
     /**
      * 学号,新增时系统生成学号，规则：grade的信息 连接 100000+max（id）的结果值；例如1号学生学号
-     * 1709100001 共计9位数字组成每届学生目前最大人数10万，第100位学生的学号是：1709100100
+     * 1709100001 共计9位数字组成每届学生目前最大人数100万-1，第100位学生的学号是：1709100100
      */
     @Column(name = "student_id")
     private String studentId;
