@@ -7,6 +7,9 @@ import javax.persistence.Column;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+/**
+ * @author lxy
+ */
 @Table(name = "students")
 public class Students extends AbstractBaseDomain {
     /**

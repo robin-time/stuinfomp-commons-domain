@@ -1,30 +1,33 @@
 package com.lxy.stuinfomp.commons.domain;
 
+import com.lxy.stuinfomp.commons.dto.AbstractBaseDomain;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+/**
+ * @author lxy
+ */
 @Table(name = "teachers")
-public class Teachers {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
+public class Teachers extends AbstractBaseDomain {
     /**
-     * 教师编号
-
-
+     * 教师编号:新增教师时候，系统自动生成编号，生成规则：
+     *   100000+max（id）的结果值，例如：第100位学生的学号是：100100
      */
     @Column(name = "teacher_number")
-    private Integer teacherNumber;
+    private Long teacherNumber;
 
     /**
      * 教师姓名
      */
+    @NotNull(message = "名字不能为空")
     private String name;
 
     /**
      * 性别: 0女，1男，2其他
      */
+    @NotNull(message = "性别不能为空")
     private String sex;
 
     private String phone;
@@ -34,40 +37,13 @@ public class Teachers {
      */
     private String major;
 
-    private String creator;
 
-    @Column(name = "gmt_created")
-    private Date gmtCreated;
-
-    private String modifier;
-
-    @Column(name = "gmt_modified")
-    private Date gmtModified;
-
-    /**
-     * @return id
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * @param id
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     /**
      * 获取教师编号
-
-
-     *
      * @return teacher_number - 教师编号
-
-
      */
-    public Integer getTeacherNumber() {
+    public Long getTeacherNumber() {
         return teacherNumber;
     }
 
@@ -80,7 +56,7 @@ public class Teachers {
 
 
      */
-    public void setTeacherNumber(Integer teacherNumber) {
+    public void setTeacherNumber(Long teacherNumber) {
         this.teacherNumber = teacherNumber;
     }
 
@@ -152,59 +128,4 @@ public class Teachers {
         this.major = major;
     }
 
-    /**
-     * @return creator
-     */
-    public String getCreator() {
-        return creator;
-    }
-
-    /**
-     * @param creator
-     */
-    public void setCreator(String creator) {
-        this.creator = creator;
-    }
-
-    /**
-     * @return gmt_created
-     */
-    public Date getGmtCreated() {
-        return gmtCreated;
-    }
-
-    /**
-     * @param gmtCreated
-     */
-    public void setGmtCreated(Date gmtCreated) {
-        this.gmtCreated = gmtCreated;
-    }
-
-    /**
-     * @return modifier
-     */
-    public String getModifier() {
-        return modifier;
-    }
-
-    /**
-     * @param modifier
-     */
-    public void setModifier(String modifier) {
-        this.modifier = modifier;
-    }
-
-    /**
-     * @return gmt_modified
-     */
-    public Date getGmtModified() {
-        return gmtModified;
-    }
-
-    /**
-     * @param gmtModified
-     */
-    public void setGmtModified(Date gmtModified) {
-        this.gmtModified = gmtModified;
-    }
 }
