@@ -1,5 +1,6 @@
 package com.lxy.stuinfomp.commons.domain;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.lxy.stuinfomp.commons.dto.AbstractBaseDomain;
 import org.hibernate.validator.constraints.Length;
 
@@ -11,6 +12,7 @@ import javax.validation.constraints.NotNull;
  * @author lxy
  */
 @Table(name = "students")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Students extends AbstractBaseDomain {
     /**
      * 学号,新增时系统生成学号，规则：grade的信息 连接 100000+max（id）的结果值；例如1号学生学号

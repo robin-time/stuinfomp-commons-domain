@@ -1,15 +1,17 @@
 package com.lxy.stuinfomp.commons.domain;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.lxy.stuinfomp.commons.dto.AbstractBaseDomain;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
 
 /**
  * @author lxy
  */
 @Table(name = "teachers")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Teachers extends AbstractBaseDomain {
     /**
      * 教师编号:新增教师时候，系统自动生成编号，生成规则：

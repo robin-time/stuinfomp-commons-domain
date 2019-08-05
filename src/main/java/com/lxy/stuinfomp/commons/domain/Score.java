@@ -1,9 +1,12 @@
 package com.lxy.stuinfomp.commons.domain;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Table(name = "score")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Score {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
