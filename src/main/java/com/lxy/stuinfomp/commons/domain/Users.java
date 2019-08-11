@@ -26,7 +26,7 @@ public class Users extends AbstractBaseDomain {
 
     private String phone;
 
-    @NotNull(message = "邮箱不能空")
+//    @NotNull(message = "邮箱不能空")
     @Pattern(regexp = RegexpUtils.EMAIL, message = "邮箱格式不正确")
     private String email;
 
