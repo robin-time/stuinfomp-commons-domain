@@ -30,7 +30,7 @@ public class Teachers extends AbstractBaseDomain {
      * 性别: 0女，1男，2其他
      */
     @NotNull(message = "性别不能为空")
-    private String sex;
+    private String gender;
 
     private String phone;
 
@@ -86,7 +86,7 @@ public class Teachers extends AbstractBaseDomain {
      * @return sex - 性别: 0女，1男，2其他
      */
     public String getSex() {
-        return sex;
+        return gender;
     }
 
     /**
@@ -95,7 +95,7 @@ public class Teachers extends AbstractBaseDomain {
      * @param sex 性别: 0女，1男，2其他
      */
     public void setSex(String sex) {
-        this.sex = sex;
+        this.gender = sex;
     }
 
     /**
