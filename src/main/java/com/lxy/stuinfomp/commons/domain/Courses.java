@@ -2,13 +2,16 @@ package com.lxy.stuinfomp.commons.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.lxy.stuinfomp.commons.dto.AbstractBaseDomain;
+import lombok.Data;
 
+import javax.persistence.Column;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
  * @author lxy
  */
+@Data
 @Table(name = "courses")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Courses extends AbstractBaseDomain {
@@ -25,38 +28,9 @@ public class Courses extends AbstractBaseDomain {
     private Integer tid;
 
     /**
-     * 获取课程名字
-     *
-     * @return name - 课程名字
+     * 课程编号
      */
-    public String getName() {
-        return name;
-    }
+    @Column(name = "course_number")
+    private Long courseNumber;
 
-    /**
-     * 设置课程名字
-     *
-     * @param name 课程名字
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * 获取教师id
-     *
-     * @return tid - 教师id
-     */
-    public Integer getTid() {
-        return tid;
-    }
-
-    /**
-     * 设置教师id
-     *
-     * @param tid 教师id
-     */
-    public void setTid(Integer tid) {
-        this.tid = tid;
-    }
 }
